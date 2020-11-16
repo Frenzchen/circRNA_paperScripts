@@ -1,6 +1,6 @@
 # circRNA_paperScripts
 
-* 16 Nov 2020, repository under development *
+## 16 Nov 2020, repository under development
 
 
 # Paper abstract
