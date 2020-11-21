@@ -2,6 +2,8 @@
 16 Nov 2020
 The repository is currently under development. It contains the scripts used to generate the main figures and tables of the paper "Evolutionarily young transposable elements drive circular RNA repertoires".
 
+Each figure/table has its own folder with the perspective scripts and a readme-file describing how to use them. The corresponidng data files can be downloaded from <add link> (zipped file, same folder structure as described in the readme-files).
+  
 
 ## Evolutionarily young transposable elements drive circular RNA repertoires
 
