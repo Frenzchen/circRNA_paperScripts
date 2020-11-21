@@ -48,7 +48,7 @@ dominant.switch <- function(x) {
 # x: list of hotspots in species
 #
 # Returns
-# list 
+# list (one entry per hotspot) with dominant circRNAs and number of tissues
 hs.dominance <- function(x) {
 	lv <- data.frame(NULL)
 	ce <- data.frame(NULL)
