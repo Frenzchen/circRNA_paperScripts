@@ -1,4 +1,4 @@
-# Figure 1, Gruhl et al. 2019
+# Figure 1, Gruhl et al. 2020
 
 ## Figure 1A
 ### Scripts
