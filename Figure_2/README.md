@@ -6,19 +6,6 @@
 
 ## Figure 2B
 ### Scripts
-```expressionClustering.r```
-
-The script plots the expression correlation matrix. Figure labels and legends were further adapted manually to make the figure more readable.
-
-### Files
-```
-.
-|-- orthology
-	|-- expression2.txt
-	|-- expression_parentalGenes.txt
-```
-## Figure 2C
-### Scripts
 ```phastcons.r```
 
 ### Files
@@ -35,7 +22,7 @@ The script plots the expression correlation matrix. Figure labels and legends we
 		|-- phastcons.bed
 ```
 
-## Figure 2D
+## Figure 2C
 ### Scripts
 ```constitutiveExons.r```
 
@@ -64,7 +51,7 @@ The script plots the expression correlation matrix. Figure labels and legends we
 		|-- mapped_exons.txt
 ```
 
-## Figure 2E
+## Figure 2D
 ### Scripts
 ```amplitude.r```
 
@@ -103,6 +90,6 @@ The script plots the expression correlation matrix. Figure labels and legends we
 		|-- exontable_gc.txt
 
 ```
-## Figure 2F
+## Figure 2E
 ### Scripts
 - manual production with Illustrator
