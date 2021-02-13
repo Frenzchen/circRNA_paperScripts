@@ -9,8 +9,8 @@
 # -- table: circ.frequency, plot: q.circ.freq
 # - Figure 1D: hotspot frequency in different species and tissues
 # -- table: df.tsi, plot: q.tsi
-# - Figure 1E: contribution ("expression strength") of top-1 and top-2 circRNA to hotspot
-# -- table: df.dom, plot: q.dom
+# - Figure 1E: contribution/dominance ("expression strength") of top-1 and top-2 circRNA to hotspot
+# -- table: hs.dom, plot: q.dom
 # 
 # Outputs PDF
 
@@ -102,11 +102,10 @@ circ.sw <- data.frame(single=NULL, total=NULL, species=NULL)
 for (s in species) {		
 	
 	# read data
-	df1 <- read.table(paste("/Volumes/Data/ArchiveData/fgruhl/", s, "rpms/rpm_0.01/circRNA_rpms.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 
-	df2 <- read.table(paste("/Volumes/Data/ArchiveData/fgruhl/", s, "properties/circRNA_rpms.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 
-	df3 <- read.table(paste("/Volumes/Data/ArchiveData/fgruhl/", s, "rpms/rpm_0.1/circRNA_rpms_0.1.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 	
+	df1 <- read.table(paste(".", s, "rpms/rpm_0.01/circRNA_rpms.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 
+	df2 <- read.table(paste(".", s, "properties/circRNA_rpms.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 
+	df3 <- read.table(paste(".", s, "rpms/rpm_0.1/circRNA_rpms_0.1.txt", sep="/"), sep="\t", as.is=TRUE, header=TRUE) 	
 
-	
 	# circRNAs per tissue and species
 	freq <- table(unlist(strsplit(df2$tissue, "\\+")))
 	circ.frequency <- rbind(circ.frequency, data.frame(species=s, ce=freq[1], lv=freq[2], ts=freq[3]))
@@ -151,7 +150,7 @@ q.tsi <- ggplot(tsi, aes(x=species, y=tsi*100, type=type, fill=type)) + geom_bar
 
 # dominance of circRNAs
 hs.dom$species <- factor(hs.dom$species, levels=species)
-q.dom <- ggplot(subset(hs.dom, position < 3), aes(x=as.character(position), y=percentage*100, group=interaction(position, species), fill=species)) + geom_boxplot(notch=TRUE, lwd=0.25) + theme_bw(base_size=8) + theme(plot.background = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), plot.title=element_text(hjust=0, vjust=1, face="bold", size=10), legend.key.size=unit(0.3, "cm")) + scale_fill_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_x_discrete(labels=c("top-1", "top-2")) + labs(x="rank", y="percentage [%]", title="E: CircRNA expression strength in hotspots", fill="")
+q.dom <- ggplot(subset(hs.dom, position < 3), aes(x=as.character(position), y=percentage*100, group=interaction(position, species))) + geom_boxplot(notch=TRUE, lwd=0.25, alpha=0.3, aes(fill=species)) + geom_point(aes(colour=species), position=position_jitterdodge(), size=0.1) + theme_bw(base_size=8) + theme(plot.background = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), plot.title=element_text(hjust=0, vjust=1, face="bold", size=10), legend.key.size=unit(0.3, "cm")) + scale_fill_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_colour_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_x_discrete(labels=c("top-1", "top-2")) + labs(x="rank", y="percentage [%]", title="E: CircRNA expression strength in hotspots", fill="", colour="")
 
 
 # plots
