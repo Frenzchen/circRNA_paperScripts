@@ -150,7 +150,7 @@ q.tsi <- ggplot(tsi, aes(x=species, y=tsi*100, type=type, fill=type)) + geom_bar
 
 # dominance of circRNAs
 hs.dom$species <- factor(hs.dom$species, levels=species)
-q.dom <- ggplot(subset(hs.dom, position < 3), aes(x=as.character(position), y=percentage*100, group=interaction(position, species))) + geom_boxplot(notch=TRUE, lwd=0.25, alpha=0.3, aes(fill=species)) + geom_point(aes(colour=species), position=position_jitterdodge(), size=0.1) + theme_bw(base_size=8) + theme(plot.background = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), plot.title=element_text(hjust=0, vjust=1, face="bold", size=10), legend.key.size=unit(0.3, "cm")) + scale_fill_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_colour_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_x_discrete(labels=c("top-1", "top-2")) + labs(x="rank", y="percentage [%]", title="E: CircRNA expression strength in hotspots", fill="", colour="")
+q.dom <- ggplot(subset(hs.dom, position < 3), aes(x=as.character(position), y=percentage*100, group=interaction(position, species))) + geom_point(aes(colour=species), position=position_jitterdodge(seed=1, dodge.width=0.9), size=0.1) + geom_violin(position=position_dodge(width=0.9), lwd=0.25, alpha=0.3, aes(fill=species)) + theme_bw(base_size=8) + theme(plot.background = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), plot.title=element_text(hjust=0, vjust=1, face="bold", size=10), legend.key.size=unit(0.3, "cm")) + scale_fill_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_colour_manual(values=c("#1F39B9", "#d01c8b", "#f1b6da", "#b8e186", "#4dac26"), labels=species) + scale_x_discrete(labels=c("top-1", "top-2")) + labs(x="rank", y="percentage [%]", title="E: CircRNA expression strength in hotspots", fill="", colour="")
 
 
 # plots
@@ -159,7 +159,3 @@ q.dom <- ggplot(subset(hs.dom, position < 3), aes(x=as.character(position), y=pe
 pdf("Figure_1.pdf", useDingbats=FALSE, width=8.27, height=11.69*2/5)
 	grid.arrange(arrangeGrob(q.circ.freq, layout_matrix=rbind(c(NA, 1, NA)), widths=c(0.3, 0.3, 0.4), nrow=1), arrangeGrob(q.tsi, q.dom, widths=c(1/2, 1/2), nrow=1), nrow=2)
 dev.off()
-
-
-
-
