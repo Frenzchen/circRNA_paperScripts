@@ -1,5 +1,6 @@
 # circRNA_paperScripts
-6 March 2021
+last update: 9 March 2021
+
 This repository contains the scripts used to generate the main figures and tables of the paper "Evolutionarily young transposable elements drive circular RNA repertoires".
 
 Each figure/table has its own folder with the perspective scripts and a readme-file describing how to use them. The corresponidng data files can be downloaded via [this link](https://drive.google.com/file/d/1MQt8LwJ8fpC-clU7yyt359MSMGbYE9WT/view?usp=sharing) (zipped file, same folder structure as described in the readme-files).
@@ -19,4 +20,4 @@ Circular RNAs (circRNAs) are found across eukaryotes and can function in post-tr
 
 Preprint: https://www.biorxiv.org/content/10.1101/2021.03.01.433421v1 \
 doi: https://doi.org/10.1101/2021.03.01.433421 \
-Paper status: submitted
+Paper status: in review
