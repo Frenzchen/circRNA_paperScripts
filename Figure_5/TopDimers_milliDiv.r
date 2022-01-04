@@ -2,7 +2,8 @@
 
 # R 3.1
 #
-# Figure 5A, Supplementary Figure 13A
+# 1st Submission: Figure 5A, Supplementary Figure 13A
+# Published version: not used anymore
 #
 # Compare mean milliDiv value for top-5 dimers in shared and species-specific circRNAs
 #
