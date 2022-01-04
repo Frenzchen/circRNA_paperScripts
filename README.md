@@ -1,5 +1,9 @@
 # circRNA_paperScripts
 last update: 4 January 2022
+open issues:
+* table 1 update missing
+* script for Figure 2A and Figure 2-Figure supplement 2 missing
+* Files for Fugure 2A need to be added to zip file (see description below)
 
 This repository contains the scripts used to generate the main figures and tables of the paper "Circular RNA repertoires are associated with evolutionarily young transposable elements".
 
