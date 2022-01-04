@@ -5,10 +5,10 @@
 # Figure 4B, D and E
 #
 # 4B: plots the proportion of top5-dimers to all dimers
-# 4C: PCA for phylogenetic distance matrix
+# 4D: PCA for phylogenetic distance matrix
 # 4E: PCA for binding efficiency (deltaG)
 #
-# Outputs figure 4B / D and Figure 4E as seperate PDFs
+# Outputs figure 4B+D and Figure 4E as two seperate PDFs.
 
 
 library(ggplot2) # v3.1.1
@@ -40,11 +40,11 @@ species <- c("opossum", "mouse", "rat", "rhesus", "human")
 df <- data.frame(percentage=NULL, category=NULL, species=NULL)
 
 for (s in species) {
-	d <- read.table(paste("dimers_", s, ".txt", sep=""), sep="\t", as.is=TRUE, header=FALSE)
-	d <- subset(d, V3 == "flanking")
-	d <- d[order(d$V2, decreasing=TRUE),]
-	n <- round(sum(d$V2[1:5])/sum(d$V2)*100)
-	df <- rbind(df, data.frame(percentage=c(n, 100-n), category=c("top5", "rest"), species=c(s, s)))
+	d <- read.table(paste("./", s, "/repeats/overestimation_by_gene.txt", sep=""), sep="\t", as.is=TRUE, header=TRUE)
+	d <- cbind(aggregate(real.count ~ repeat_name, sum, data=d))
+	d <- d[order(d$real.count, decreasing=TRUE),]
+	n <- round(sum(d$real.count[1:5])/sum(d$real.count)*100)
+	df <- rbind(df, data.frame(percentage=c(n, 100-n), category=c("top-5", "rest"), species=c(s, s)))
 }
 
 df$species <- factor(df$species, levels=rev(species))
@@ -53,7 +53,7 @@ q.top5 <-	ggplot(df, aes(x=species, y=percentage, group=species, fill=category))
 
 
 # figure 4d analysis
-dimers <- read.table("dimers_mouse.txt", sep="\t", as.is=TRUE)
+#dimers <- read.table("dimers_mouse.txt", sep="\t", as.is=TRUE)
 distmx <- read.table("mouse_distmx.txt", sep="\t", as.is=TRUE, row.names=1)
 names <- read.table("repeat_names.txt", sep="\t", as.is=TRUE)
 genes <- rownames(distmx)
@@ -67,7 +67,6 @@ q.pca.dist <- ggplot(d2) + theme_minimal(base_size=8) + geom_point(aes(x=PC1, y=
 
 
 # figure 4e analysis
-# !!! hard-coded, files needs to be replaced with species file !!! 
 cofold <- read.table("RNAcofold_pairwise_rodents.txt", sep="\t", as.is=TRUE, header=TRUE)
 l <- length(genes)
 mx <- matrix(0, ncol=l, nrow=l)

@@ -2,11 +2,11 @@
 
 # R 3.1
 # 
-# Figure 3A, Supplementary Figure 11
+# Figure 4A, Figure 4-Figure supplement 1
 #
-# Compare the enrichment of different transposable elements in background and flanking introns (check: lifted backgroundIntrons.bed, not length corrected once?)
+# Compares the enrichment of different transposable elements in background and flanking introns.
 #
-# Outputs PDF
+# Outputs PDF.
 
 
 # libraries
@@ -19,7 +19,7 @@ library(gridExtra) # v2.3
 # run
 ##########################################################################################
 
-scratch <- "~/Documents/scratch_folders"
+scratch <- "~"
 species <- c("opossum", "mouse", "rat", "rhesus", "human")
 base <- c("md", "mm", "rn", "rm", "hs")
 
@@ -55,6 +55,8 @@ for (i in 1:5) {
 	mclass <- merge(fclass, bclass, by="Var1")
 	colnames(mclass)[2:3] <- c("flanking", "background")
 	mclass <- mclass[order(mclass$flanking, decreasing=TRUE),][1:10,]
+	print(species[i])
+	print(wilcox.test(mclass$flanking, mclass$background, paired=TRUE))
 	mclass$enr <- mclass$flanking/mclass$background
 	mclass <- mclass[order(mclass$enr, decreasing=TRUE),]
 	mclass$species <- species[i]
