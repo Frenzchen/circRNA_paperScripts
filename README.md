@@ -5,7 +5,7 @@ This repository contains the scripts used to generate the main figures and table
 
 The paper was accepted in eLife on 19 September 2021: https://elifesciences.org/articles/67991
 
-Each figure/table has its own folder with the perspective scripts and a readme-file describing how to use them. The corresponidng data files can be downloaded via [this link](https://drive.google.com/file/d/1xa7SfcYsrrS2f926T8w4T8zyhmmCajhf/view?usp=sharing) (zipped file, same folder structure as described in the readme-files).
+Each figure/table has its own folder with the perspective scripts and a readme-file describing how to use them. The corresponidng data files can be downloaded via [this link](https://drive.google.com/file/d/1Fy2u7k9viCyDbIupCbdv1l3lMARaHANq/view?usp=sharing) (zipped file, same folder structure as described in the readme-files). For all old files corresponding to the initial submission, please use [this link](https://drive.google.com/file/d/1xa7SfcYsrrS2f926T8w4T8zyhmmCajhf/view?usp=sharing).
   
 
 ## Evolutionarily young transposable elements drive circular RNA repertoires
