@@ -5,8 +5,6 @@ This repository contains the scripts used to generate the main figures and table
 
 The paper was accepted in eLife on 19 September 2021: https://elifesciences.org/articles/67991
 
-Please note, that the scripts in this repository still correspond to the paper version initially submitted to eLife - they will be updated within the next days.
-
 Each figure/table has its own folder with the perspective scripts and a readme-file describing how to use them. The corresponidng data files can be downloaded via [this link](https://drive.google.com/file/d/1xa7SfcYsrrS2f926T8w4T8zyhmmCajhf/view?usp=sharing) (zipped file, same folder structure as described in the readme-files).
   
 
