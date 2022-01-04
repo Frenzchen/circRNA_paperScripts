@@ -1,5 +1,5 @@
 # circRNA_paperScripts
-last update: 21 September 2021
+last update: 4 January 2022
 
 This repository contains the scripts used to generate the main figures and tables of the paper "Circular RNA repertoires are associated with evolutionarily young transposable elements".
 
