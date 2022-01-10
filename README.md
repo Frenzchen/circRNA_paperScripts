@@ -1,10 +1,6 @@
 # circRNA_paperScripts
 last update: 10 January 2022
 
-open issues:
-* script for Figure 2A and Figure 2-Figure supplement 2 missing
-* Files for Figure 2A need to be added to zip file (see description below)
-
 This repository contains the scripts used to generate the main figures and tables of the paper "Circular RNA repertoires are associated with evolutionarily young transposable elements".
 
 The paper was accepted in eLife on 19 September 2021: https://elifesciences.org/articles/67991
@@ -14,9 +10,9 @@ Each figure/table has its own folder with the perspective scripts and a readme-f
 
 ## Circular RNA repertoires are associated with evolutionarily young transposable elements
 
-Franziska Gruhl<sup>1,2</sup>, Peggy Janich<sup>1,3</sup>, Henrik Kaessmann<sup>4*</sup>, David Gatfield<sup>1*</sup>
-1. Center for Integrative Genomics, University of Lausanne, Lausanne, Switzerland
-2. SIB Swiss Institute of Bioinformatics, Lausanne, Switzerland
+Franziska Gruhl<sup>1,2</sup>, Peggy Janich<sup>2,3</sup>, Henrik Kaessmann<sup>4*</sup>, David Gatfield<sup>2*</sup>
+1. SIB Swiss Institute of Bioinformatics, Lausanne, Switzerland
+2. Center for Integrative Genomics, University of Lausanne, Lausanne, Switzerland
 3. Krebsliga Schweiz, CH-3001 Bern, Switzerland
 4. Center for Molecular Biology of Heidelberg University (ZMBH), DKFZ-ZMBH Alliance, Heidelberg, Germany
 
