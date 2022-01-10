@@ -1,8 +1,7 @@
 # circRNA_paperScripts
-last update: 4 January 2022
+last update: 10 January 2022
 
 open issues:
-* table 1 update missing
 * script for Figure 2A and Figure 2-Figure supplement 2 missing
 * Files for Figure 2A need to be added to zip file (see description below)
 
